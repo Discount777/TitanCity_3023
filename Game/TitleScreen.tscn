@@ -54,6 +54,7 @@ offset_top = 80.0
 offset_right = 1160.0
 offset_bottom = 640.0
 grow_vertical = 2
+pivot_offset = Vector2(189, -284)
 
 [node name="Logo" type="TextureRect" parent="menu"]
 layout_mode = 2
