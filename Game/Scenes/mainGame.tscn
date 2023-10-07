@@ -81,9 +81,9 @@ layer_1/tile_data = PackedInt32Array(-1, 131073, 0)
 zoom = Vector2(1.875, 1.875)
 
 [node name="waterButton" type="Button" parent="."]
-offset_left = -277.0
+offset_left = -276.0
 offset_top = 123.0
-offset_right = -173.0
+offset_right = -172.0
 offset_bottom = 160.0
 text = "Water"
 
@@ -95,24 +95,24 @@ offset_bottom = 162.0
 text = "Energy"
 
 [node name="foodButton" type="Button" parent="."]
-offset_left = -35.0
-offset_top = 122.0
-offset_right = 77.0
-offset_bottom = 158.0
+offset_left = -33.0
+offset_top = 124.0
+offset_right = 79.0
+offset_bottom = 160.0
 text = "Food"
 
 [node name="materialButton" type="Button" parent="."]
 offset_left = 94.0
-offset_top = 119.0
+offset_top = 124.0
 offset_right = 175.0
-offset_bottom = 158.0
+offset_bottom = 163.0
 text = "Material"
 
 [node name="populationButton" type="Button" parent="."]
-offset_left = 187.0
-offset_top = 120.0
-offset_right = 280.0
-offset_bottom = 151.0
+offset_left = 194.0
+offset_top = 124.0
+offset_right = 287.0
+offset_bottom = 155.0
 text = "Population"
 
 [connection signal="pressed" from="waterButton" to="." method="_on_water_button_pressed"]

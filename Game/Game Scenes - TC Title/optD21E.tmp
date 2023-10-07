@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brvw0mgm4mwsf"]
+
+[ext_resource type="PackedScene" path="res://Game Scenes/game_scene.tscn" id="1_xgjge"]
+
+[node name="Options Scene" instance=ExtResource("1_xgjge")]
+
+[node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
+text = "Feature Coming Soon!"

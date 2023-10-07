@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://7ts4xnaibj1e"]
+
+[ext_resource type="Texture2D" uid="uid://wr7xlsbbf16y" path="res://Assets - TC Title/pxArt.png" id="1_5ofno"]
+[ext_resource type="FontFile" uid="uid://dx4m0i5o64ex7" path="res://Text Files - TC Title/Pixels.ttf" id="2_auu3i"]
+
+[sub_resource type="GDScript" id="GDScript_xrihc"]
+resource_name = "res://Game Scenes/game_scene.gd"
+script/source = "extends Control
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file(\"res://TitleScreen.tscn\")
+"
+
+[node name="Game Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_xrihc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -3.0
+offset_right = 1282.0
+offset_bottom = 720.0
+texture = ExtResource("1_5ofno")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_auu3i")
+theme_override_font_sizes/font_size = 50
+text = "Gameplay Scene"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_auu3i")
+theme_override_font_sizes/font_size = 37
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

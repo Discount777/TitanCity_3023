@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brvw0mgm4mwsf"]
+
+[ext_resource type="PackedScene" uid="uid://hmtyo6pvfyfr" path="res://Game Scenes - TC Title/credits_scene.tscn" id="1_o70j6"]
+
+[node name="Option Scene" instance=ExtResource("1_o70j6")]
+
+[node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
+text = "Options Scene"
