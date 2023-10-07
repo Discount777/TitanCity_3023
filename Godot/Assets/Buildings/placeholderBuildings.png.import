@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu7swvfegchch"
-path="res://.godot/imported/Mountain.png-13834e46c6219bbf288b706d12fb0416.ctex"
+uid="uid://pwdp1cfqntqq"
+path="res://.godot/imported/placeholderBuildings.png-4d496014fc78c0e4e9a3b9ddfffcecca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/Mountain.png"
-dest_files=["res://.godot/imported/Mountain.png-13834e46c6219bbf288b706d12fb0416.ctex"]
+source_file="res://Assets/Buildings/placeholderBuildings.png"
+dest_files=["res://.godot/imported/placeholderBuildings.png-4d496014fc78c0e4e9a3b9ddfffcecca.ctex"]
 
 [params]
 
