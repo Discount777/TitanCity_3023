@@ -48,6 +48,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_q7yav"]
 tile_shape = 1
+tile_layout = 4
 tile_size = Vector2i(32, 16)
 custom_data_layer_0/name = "buildingType"
 custom_data_layer_0/type = 4

@@ -27,20 +27,22 @@ func _on_material_button_pressed():
 func _on_population_button_pressed():
 	currentBuildingMode = buildingModes.population
 
-func canBePlaced(coordinates:Vector2):
+func canBePlaced(coordinates:Vector2i):
 	var tileData: TileData = tileMap.get_cell_tile_data(tileLayer, coordinates)
 	var TileType = tileData.get_custom_data("tileType")
 	var CanPlaceBuilding = tileData.get_custom_data("canPlaceBuilding")
+	var isThereBuildingAlready = (tileMap.get_cell_tile_data(buildingLayer, coordinates)) != null
 	var isThereAdjacent = false
-	for i in [Vector2(-1,1), Vector2(-1,-1), Vector2(1,1), Vector2(1,-1)]:
+	for i in [Vector2i(-1,0), Vector2i(1,0), Vector2i(0,1), Vector2i(0,-1)]:
 		if (tileMap.get_cell_tile_data(buildingLayer, coordinates +i)) != null:
 			isThereAdjacent = true
-	return CanPlaceBuilding and isThereAdjacent
+	return CanPlaceBuilding and isThereAdjacent and not isThereBuildingAlready
 	
 
 
 func _input(event):
 	var MapCoordinates = tileMap.local_to_map(get_global_mouse_position())
+	print(MapCoordinates)
 	var tileData: TileData = tileMap.get_cell_tile_data(tileLayer, MapCoordinates)
 	if Input.is_action_just_pressed("leftMouseButton"):
 		if tileData:
