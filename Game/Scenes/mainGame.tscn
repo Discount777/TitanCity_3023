@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2q3bu7sja4rq"]
+[gd_scene load_steps=13 format=3 uid="uid://d2q3bu7sja4rq"]
 
 [ext_resource type="Script" path="res://Scripts/mainGame.gd" id="1_f3i7g"]
 [ext_resource type="Texture2D" uid="uid://qtsgbe1enwe5" path="res://Assets/Tileset/placeholderTiles.png" id="2_15wk7"]
 [ext_resource type="Texture2D" uid="uid://pwdp1cfqntqq" path="res://Assets/Buildings/placeholderBuildings.png" id="3_f8beg"]
 [ext_resource type="FontFile" uid="uid://c34tphc5yjox8" path="res://Pixels.ttf" id="4_8afxh"]
-[ext_resource type="Script" path="res://Scenes/tilemap.gd" id="4_l2bqy"]
 [ext_resource type="Script" path="res://Scenes/Resources.gd" id="4_lxvtr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obi1j"]
@@ -112,7 +111,6 @@ layer_1/y_sort_enabled = true
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-1, 131073, 0)
-script = ExtResource("4_l2bqy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.875, 1.875)
@@ -151,103 +149,6 @@ offset_top = 120.0
 offset_right = 280.0
 offset_bottom = 151.0
 text = "Population"
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 124.0
-offset_top = -168.0
-offset_right = 301.0
-offset_bottom = -62.0
-script = ExtResource("4_lxvtr")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Water" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.196078, 0.756863, 1)
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "Water"
-
-[node name="WaterVal" type="Label" parent="Control/VBoxContainer/Water"]
-layout_mode = 2
-offset_left = 107.0
-offset_right = 284.0
-offset_bottom = 15.0
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "100"
-
-[node name="Energy" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.847059, 0.690196, 0, 1)
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "Energy"
-
-[node name="EnergyVal" type="Label" parent="Control/VBoxContainer/Energy"]
-layout_mode = 2
-offset_left = 107.0
-offset_right = 284.0
-offset_bottom = 15.0
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "100"
-
-[node name="Food" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.376471, 0.752941, 0.0627451, 1)
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "Food"
-
-[node name="FoodVal" type="Label" parent="Control/VBoxContainer/Food"]
-layout_mode = 2
-offset_left = 107.0
-offset_right = 284.0
-offset_bottom = 15.0
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "100"
-
-[node name="Mat" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.521569, 0.121569, 0.2, 1)
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "Materials"
-
-[node name="MatVal" type="Label" parent="Control/VBoxContainer/Mat"]
-layout_mode = 2
-offset_left = 107.0
-offset_right = 284.0
-offset_bottom = 15.0
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "100"
-
-[node name="Pop" type="Label" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.309804, 0.619608, 0.576471, 1)
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "Population"
-
-[node name="PopVal" type="Label" parent="Control/VBoxContainer/Pop"]
-layout_mode = 2
-offset_left = 107.0
-offset_right = 284.0
-offset_bottom = 15.0
-theme_override_fonts/font = ExtResource("4_8afxh")
-theme_override_font_sizes/font_size = 16
-text = "100"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(237, -6)
@@ -338,6 +239,133 @@ position = Vector2(113, -98)
 rotation = -0.00898179
 scale = Vector2(0.96875, 0.959559)
 polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -297.0
+offset_top = -167.0
+offset_right = 295.0
+offset_bottom = -127.0
+script = ExtResource("4_lxvtr")
+
+[node name="HBoxWater" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Water" type="Label" parent="Control/HBoxWater"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "Water"
+
+[node name="WaterVal" type="Label" parent="Control/HBoxWater/Water"]
+layout_mode = 2
+offset_left = 25.0
+offset_right = 46.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "100
+"
+
+[node name="HBoxEnergy" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_right = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Energy" type="Label" parent="Control/HBoxEnergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "Energy"
+
+[node name="EnergyVal" type="Label" parent="Control/HBoxEnergy/Energy"]
+layout_mode = 2
+offset_left = 25.0
+offset_right = 46.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "100
+"
+
+[node name="HBoxFood" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 157.0
+offset_right = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Food" type="Label" parent="Control/HBoxFood"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "Food"
+
+[node name="FoodVal" type="Label" parent="Control/HBoxFood/Food"]
+layout_mode = 2
+offset_left = 25.0
+offset_right = 46.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "100
+"
+
+[node name="HBoxMat" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 244.0
+offset_right = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mat" type="Label" parent="Control/HBoxMat"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "Materials"
+
+[node name="MatVal" type="Label" parent="Control/HBoxMat/Mat"]
+layout_mode = 2
+offset_left = 43.0
+offset_right = 64.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "100
+"
+
+[node name="HBoxPop" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 326.0
+offset_right = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pop" type="Label" parent="Control/HBoxPop"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "Population"
+
+[node name="PopVal" type="Label" parent="Control/HBoxPop/Pop"]
+layout_mode = 2
+offset_left = 53.0
+offset_right = 74.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+text = "100
+"
 
 [connection signal="pressed" from="waterButton" to="." method="_on_water_button_pressed"]
 [connection signal="pressed" from="energyButton" to="." method="_on_energy_button_pressed"]

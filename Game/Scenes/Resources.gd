@@ -17,11 +17,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$VBoxContainer/Water/WaterVal.text = str(Water)
-	$VBoxContainer/Energy/EnergyVal.text = str(Energy)
-	$VBoxContainer/Food/FoodVal.text = str(Food)
-	$VBoxContainer/Mat/MatVal.text = str(Mat)
-	$VBoxContainer/Pop/PopVal.text = str(Pop)
+	$HBoxWater/Water/WaterVal.text = str(Water)
+	$HBoxEnergy/Energy/EnergyVal.text = str(Energy)
+	$HBoxFood/Food/FoodVal.text = str(Food)
+	$HBoxMat/Mat/MatVal.text = str(Mat)
+	$HBoxPop/Pop/PopVal.text = str(Pop)
 	
 
 
