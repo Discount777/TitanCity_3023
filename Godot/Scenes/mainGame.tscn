@@ -1,12 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2q3bu7sja4rq"]
+[gd_scene load_steps=14 format=3 uid="uid://d2q3bu7sja4rq"]
 
 [ext_resource type="Script" path="res://Scripts/mainGame.gd" id="1_f3i7g"]
 [ext_resource type="Texture2D" uid="uid://qtsgbe1enwe5" path="res://Assets/Tileset/placeholderTiles.png" id="2_15wk7"]
 [ext_resource type="Texture2D" uid="uid://pwdp1cfqntqq" path="res://Assets/Buildings/placeholderBuildings.png" id="3_f8beg"]
+[ext_resource type="FontFile" uid="uid://c34tphc5yjox8" path="res://Pixels.ttf" id="4_8afxh"]
+[ext_resource type="Script" path="res://Scenes/tilemap.gd" id="4_l2bqy"]
+[ext_resource type="Script" path="res://Scenes/Resources.gd" id="4_lxvtr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obi1j"]
 texture = ExtResource("2_15wk7")
 texture_region_size = Vector2i(32, 32)
+0:0/next_alternative_id = 2
 0:0/0 = 0
 0:0/0/custom_data_1 = "default"
 0:0/0/custom_data_2 = true
@@ -46,6 +50,34 @@ texture_region_size = Vector2i(32, 32)
 5:0/0/texture_origin = Vector2i(0, 9)
 5:0/0/custom_data_0 = "population"
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqeby"]
+resource_name = "Snow"
+texture = ExtResource("2_15wk7")
+texture_region_size = Vector2i(32, 16)
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ju5rs"]
+resource_name = "Ice"
+texture = ExtResource("2_15wk7")
+texture_region_size = Vector2i(32, 16)
+1:0/size_in_atlas = Vector2i(1, 2)
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3l5n"]
+resource_name = "Metal"
+texture = ExtResource("2_15wk7")
+texture_region_size = Vector2i(32, 16)
+2:0/size_in_atlas = Vector2i(1, 2)
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6phy"]
+resource_name = "Methane"
+texture = ExtResource("2_15wk7")
+texture_region_size = Vector2i(32, 16)
+3:0/size_in_atlas = Vector2i(1, 2)
+3:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_q7yav"]
 tile_shape = 1
 tile_layout = 4
@@ -58,6 +90,10 @@ custom_data_layer_2/name = "canPlaceBuilding"
 custom_data_layer_2/type = 1
 sources/0 = SubResource("TileSetAtlasSource_obi1j")
 sources/1 = SubResource("TileSetAtlasSource_07coa")
+sources/2 = SubResource("TileSetAtlasSource_bqeby")
+sources/3 = SubResource("TileSetAtlasSource_ju5rs")
+sources/4 = SubResource("TileSetAtlasSource_y3l5n")
+sources/5 = SubResource("TileSetAtlasSource_l6phy")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_f3i7g")
@@ -76,6 +112,7 @@ layer_1/y_sort_enabled = true
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-1, 131073, 0)
+script = ExtResource("4_l2bqy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.875, 1.875)
@@ -114,6 +151,193 @@ offset_top = 120.0
 offset_right = 280.0
 offset_bottom = 151.0
 text = "Population"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 124.0
+offset_top = -168.0
+offset_right = 301.0
+offset_bottom = -62.0
+script = ExtResource("4_lxvtr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Water" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.196078, 0.756863, 1)
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "Water"
+
+[node name="WaterVal" type="Label" parent="Control/VBoxContainer/Water"]
+layout_mode = 2
+offset_left = 107.0
+offset_right = 284.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "100"
+
+[node name="Energy" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.690196, 0, 1)
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "Energy"
+
+[node name="EnergyVal" type="Label" parent="Control/VBoxContainer/Energy"]
+layout_mode = 2
+offset_left = 107.0
+offset_right = 284.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "100"
+
+[node name="Food" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.376471, 0.752941, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "Food"
+
+[node name="FoodVal" type="Label" parent="Control/VBoxContainer/Food"]
+layout_mode = 2
+offset_left = 107.0
+offset_right = 284.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "100"
+
+[node name="Mat" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.521569, 0.121569, 0.2, 1)
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "Materials"
+
+[node name="MatVal" type="Label" parent="Control/VBoxContainer/Mat"]
+layout_mode = 2
+offset_left = 107.0
+offset_right = 284.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "100"
+
+[node name="Pop" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.309804, 0.619608, 0.576471, 1)
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "Population"
+
+[node name="PopVal" type="Label" parent="Control/VBoxContainer/Pop"]
+layout_mode = 2
+offset_left = 107.0
+offset_right = 284.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_8afxh")
+theme_override_font_sizes/font_size = 16
+text = "100"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(237, -6)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(159.793, -22.2864)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(193, -22)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(209, -15)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(177, -47)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(192, -39)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(145, -30)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(129, -54)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(144, -46)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(113, -78)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(129, -71)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(161, -70)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(177, -62)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(145, -94)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(161, -86)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(145, -111)
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(97, -106)
+rotation = -0.00898179
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(113, -98)
+rotation = -0.00898179
+scale = Vector2(0.96875, 0.959559)
+polygon = PackedVector2Array(-493, 45, -477, 53, -493, 62, -509, 54)
 
 [connection signal="pressed" from="waterButton" to="." method="_on_water_button_pressed"]
 [connection signal="pressed" from="energyButton" to="." method="_on_energy_button_pressed"]

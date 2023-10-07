@@ -29,7 +29,6 @@ func _on_population_button_pressed():
 
 func canBePlaced(coordinates:Vector2i):
 	var tileData: TileData = tileMap.get_cell_tile_data(tileLayer, coordinates)
-	var TileType = tileData.get_custom_data("tileType")
 	var CanPlaceBuilding = tileData.get_custom_data("canPlaceBuilding")
 	var isThereBuildingAlready = (tileMap.get_cell_tile_data(buildingLayer, coordinates)) != null
 	var isThereAdjacent = false
@@ -40,7 +39,7 @@ func canBePlaced(coordinates:Vector2i):
 	
 
 
-func _input(event):
+func _input(_event):
 	var MapCoordinates = tileMap.local_to_map(get_global_mouse_position())
 	print(MapCoordinates)
 	var tileData: TileData = tileMap.get_cell_tile_data(tileLayer, MapCoordinates)
@@ -64,6 +63,25 @@ func _input(event):
 					buildingModes.population:
 						tileMap.set_cell(buildingLayer, MapCoordinates, 1, Vector2i(5,0))
 
+
+
+
+
+func collect_resources(buildings: Array, resource_tiles: Array):
+	for building in buildings:
+		var generation_rate = building.generation_rate
+
+		if building.is_on_resource_tile:
+			# Apply bonus (e.g., 1.5x) if on a matching resource tile
+			generation_rate *= 1.5
+
+		# Calculate resources generated during the collection interval
+		var resources_generated = generation_rate
+
+		# Add the generated resources to the corresponding resource tile
+		for resource_tile in resource_tiles:
+			if resource_tile.resource_type == building.building_type:
+				resource_tile.amount += resources_generated
 
 
 
