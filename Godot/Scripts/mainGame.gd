@@ -4,6 +4,7 @@ extends Node2D
 
 enum buildingModes {food, mats, energy, water, population, none}
 var currentBuildingMode = buildingModes.none
+var MapCoordinates:Vector2
 
 var buildingLayer = 1
 var tileLayer = 0
@@ -13,7 +14,9 @@ func _ready():
 
 
 func _process(delta):
-	pass
+	if (currentBuildingMode != buildingModes.none):
+		MapCoordinates = tileMap.local_to_map(get_global_mouse_position())
+		print(MapCoordinates)
 
 #functions to change Building modes
 func _on_water_button_pressed():
@@ -41,8 +44,6 @@ func canBePlaced(coordinates:Vector2i):
 
 
 func _input(event):
-	var MapCoordinates = tileMap.local_to_map(get_global_mouse_position())
-	print(MapCoordinates)
 	var tileData: TileData = tileMap.get_cell_tile_data(tileLayer, MapCoordinates)
 	if Input.is_action_just_pressed("leftMouseButton"):
 		if tileData:
