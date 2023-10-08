@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=3 uid="uid://h10x74xd2dag"]
+
+[ext_resource type="FontFile" uid="uid://c34tphc5yjox8" path="res://Pixels.ttf" id="1_e6a3u"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HBoxEnergy" type="HBoxContainer" parent="."]
+offset_left = -227.0
+offset_top = -233.0
+offset_right = 382.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Energy" type="Label" parent="HBoxEnergy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "Energy"
+
+[node name="EnergyVal" type="Label" parent="HBoxEnergy/Energy"]
+layout_mode = 2
+offset_left = 25.0
+offset_right = 46.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "20
+"
+
+[node name="HBoxFood" type="HBoxContainer" parent="."]
+offset_left = -141.0
+offset_top = -233.0
+offset_right = 468.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Food" type="Label" parent="HBoxFood"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "Food"
+
+[node name="FoodVal" type="Label" parent="HBoxFood/Food"]
+layout_mode = 2
+offset_left = 25.0
+offset_right = 46.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "20
+"
+
+[node name="HBoxWater" type="HBoxContainer" parent="."]
+offset_left = -293.0
+offset_top = -233.0
+offset_right = 316.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Water" type="Label" parent="HBoxWater"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "Water"
+
+[node name="WaterVal" type="Label" parent="HBoxWater/Water"]
+layout_mode = 2
+offset_left = 25.0
+offset_right = 46.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "20
+"
+
+[node name="HBoxMat" type="HBoxContainer" parent="."]
+offset_left = -54.0
+offset_top = -233.0
+offset_right = 555.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mat" type="Label" parent="HBoxMat"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "Materials"
+
+[node name="MatVal" type="Label" parent="HBoxMat/Mat"]
+layout_mode = 2
+offset_left = 43.0
+offset_right = 64.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "20"
+
+[node name="HBoxPop" type="HBoxContainer" parent="."]
+offset_left = 28.0
+offset_top = -233.0
+offset_right = 637.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pop" type="Label" parent="HBoxPop"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "Population"
+
+[node name="PopVal" type="Label" parent="HBoxPop/Pop"]
+layout_mode = 2
+offset_left = 59.0
+offset_top = 1.0
+offset_right = 80.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("1_e6a3u")
+text = "10
+"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "TEst"

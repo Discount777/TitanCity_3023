@@ -2,11 +2,12 @@ extends Node2D
 
 @onready var tileMap: TileMap = $tilemap
 
-@onready var metalCount = int($Control/HBoxMat/Mat/MatVal.text)
-@onready var waterCount = int($Control/HBoxWater/Water/WaterVal.text)
-@onready var energyCount = int($Control/HBoxEnergy/Energy/EnergyVal.text)
-@onready var popCount = int($Control/HBoxPop/Pop/PopVal.text)
-@onready var foodCount = int($Control/HBoxFood/Food/FoodVal.text)
+
+@onready var metalCount = int($Control/MatCont/Mat/MatVal.text)
+@onready var waterCount = int($Control/WaterCont/Water/WaterVal.text)
+@onready var energyCount = int($Control/EnergyCont/Energy/EnergyVal.text)
+@onready var popCount = int($Control/PopCont/Pop/PopVal.text)
+@onready var foodCount = int($Control/FoodCont/Food/FoodVal.text)
 
 
 enum buildingModes {food, mats, energy, water, population, none}
@@ -142,11 +143,11 @@ func _on_ResourceTimer_timeout():
 				waterCount -=10
 
 
-	$Control/HBoxWater/Water/WaterVal.text = str(waterCount)
-	$Control/HBoxEnergy/Energy/EnergyVal.text = str(energyCount)
-	$Control/HBoxFood/Food/FoodVal.text = str(foodCount)
-	$Control/HBoxMat/Mat/MatVal.text = str(metalCount)
-	$Control/HBoxPop/Pop/PopVal.text = str(popCount)
+	$Control/WaterCont/Water/WaterVal.text = str(waterCount)
+	$Control/EnergyCont/Energy/EnergyVal.text = str(energyCount)
+	$Control/FoodCont/Food/FoodVal.text = str(foodCount)
+	$Control/MatCont/Mat/MatVal.text = str(metalCount)
+	$Control/PopCont/Pop/PopVal.text = str(popCount)
 
 	print(popCount, metalCount, energyCount, waterCount, foodCount)
 			
@@ -214,3 +215,7 @@ func _on_ResourceTimer_timeout():
 
 
 
+
+
+func _on_ui_ready():
+	pass # Replace with function body.

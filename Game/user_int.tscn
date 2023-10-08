@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwkjq4oe7cnv5"]
+
+[ext_resource type="FontFile" uid="uid://c34tphc5yjox8" path="res://Pixels.ttf" id="1_cvxiy"]
+
+[node name="User_int" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnergyCont" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Energy" type="Label" parent="Control/EnergyCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "Energy
+"
+
+[node name="EnergyVal" type="Label" parent="Control/EnergyCont/Energy"]
+layout_mode = 2
+offset_left = 36.0
+offset_right = 59.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "10
+"
+
+[node name="MatCont" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Mat" type="Label" parent="Control/MatCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "Energy
+"
+
+[node name="MatVal" type="Label" parent="Control/MatCont/Mat"]
+layout_mode = 2
+offset_left = 36.0
+offset_right = 59.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "10
+"
+
+[node name="WaterCont" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Water" type="Label" parent="Control/WaterCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "Energy
+"
+
+[node name="WaterVal" type="Label" parent="Control/WaterCont/Water"]
+layout_mode = 2
+offset_left = 36.0
+offset_right = 59.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "10
+"
+
+[node name="PopCont" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pop" type="Label" parent="Control/PopCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "Energy
+"
+
+[node name="PopVal" type="Label" parent="Control/PopCont/Pop"]
+layout_mode = 2
+offset_left = 36.0
+offset_right = 59.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "10
+"
+
+[node name="FoodCont" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Food" type="Label" parent="Control/FoodCont"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "Energy
+"
+
+[node name="FoodVal" type="Label" parent="Control/FoodCont/Food"]
+layout_mode = 2
+offset_left = 36.0
+offset_right = 59.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("1_cvxiy")
+theme_override_font_sizes/font_size = 16
+text = "10
+"
