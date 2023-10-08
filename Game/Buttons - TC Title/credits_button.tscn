@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://gock0omc2djt"]
+
+[ext_resource type="PackedScene" uid="uid://b0nxj2fjc6op1" path="res://Buttons - TC Title/MenuButton#.tscn" id="1_od0qu"]
+
+[node name="Credits Button" instance=ExtResource("1_od0qu")]
+anchors_preset = 15
+anchor_bottom = 1.0
+offset_bottom = -685.0
+grow_vertical = 2
+
+[node name="Label" parent="." index="0"]
+offset_top = -18.0
+offset_right = 180.0
+offset_bottom = 9.0
+text = "Credits
+"

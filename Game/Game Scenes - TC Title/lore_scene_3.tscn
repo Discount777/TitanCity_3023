@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5l3opmqh4im5"]
+
+[ext_resource type="PackedScene" uid="uid://deum5u7pbkxkf" path="res://Game Scenes - TC Title/Lore Scene 1.tscn" id="1_1cte4"]
+[ext_resource type="Script" path="res://Game Scenes - TC Title/lore_scene_3.gd" id="2_53cnu"]
+[ext_resource type="FontFile" uid="uid://dx4m0i5o64ex7" path="res://Text Files - TC Title/Pixels.ttf" id="2_hbqbu"]
+
+[node name="Game Scene" instance=ExtResource("1_1cte4")]
+script = ExtResource("2_53cnu")
+
+[node name="Label" parent="VBoxContainer" index="0"]
+text = "Earth Command has entrusted us with a formidable arsenal of tools: a Polymerization Plant, a cutting-edge Mining Facility, "
+
+[node name="Label2" parent="VBoxContainer" index="1"]
+text = "an advanced Water Purification system, a powerful Fusion Reactor, a state-of-the-art Hydroponics facility, and comfortable Population Quarters. "
+
+[node name="Label3" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hbqbu")
+theme_override_font_sizes/font_size = 32
+text = "These technological marvels shall serve as our foundation as we embark on the cosmic endeavor of colonizing Titan."
+horizontal_alignment = 1

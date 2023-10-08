@@ -82,7 +82,7 @@ layer_1/tile_data = PackedInt32Array(-1, 131073, 0)
 script = ExtResource("4_l2bqy")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 30.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

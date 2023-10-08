@@ -85,13 +85,16 @@ func _input(_event):
 						
 	
 	
+	$Control/WaterCont/Water/WaterVal.text = str(waterCount)
+	$Control/EnergyCont/Energy/EnergyVal.text = str(energyCount)
+	$Control/FoodCont/Food/FoodVal.text = str(foodCount)
+	$Control/MatCont/Mat/MatVal.text = str(metalCount)
+	$Control/PopCont/Pop/PopVal.text = str(popCount)
 	
-	var data = $tilemap.get_cell_tile_data(tileLayer,MapCoordinates)
-	if data:
-		var resType = data.get_custom_data('tileType')
-		#print(resType)
-#	else:
-		#print("No tile data at ", MapCoordinates)
+	if waterCount > 0 and energyCount > 0 and foodCount > 0 and metalCount > 0 and popCount >0:
+		pass
+	else:
+		get_tree().change_scene_to_file("res://TitleScreen.tscn")
 		
 		
 		

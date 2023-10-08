@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://dx62eqmd3wsyx"]
+
+[ext_resource type="Texture2D" uid="uid://wr7xlsbbf16y" path="res://Assets - TC Title/pxArt.png" id="1_hqly3"]
+[ext_resource type="Texture2D" uid="uid://rn75eg56sp7t" path="res://Assets - TC Title/logo 2.png" id="2_c11a5"]
+[ext_resource type="PackedScene" uid="uid://ba5dygskjy7v5" path="res://Buttons - TC Title/play_button.tscn" id="3_1xgqw"]
+[ext_resource type="PackedScene" uid="uid://bfii8ond3y806" path="res://Buttons - TC Title/options_button.tscn" id="4_vpfxc"]
+[ext_resource type="PackedScene" uid="uid://gock0omc2djt" path="res://Buttons - TC Title/credits_button.tscn" id="5_465fn"]
+[ext_resource type="Texture2D" uid="uid://eopnxwgqqrea" path="res://Assets - TC Title/space command.png" id="6_55lfu"]
+[ext_resource type="PackedScene" uid="uid://cargx3qg5u073" path="res://Buttons - TC Title/Quit_button.tscn" id="6_smh84"]
+[ext_resource type="FontFile" uid="uid://dx4m0i5o64ex7" path="res://Text Files - TC Title/Pixels.ttf" id="6_x0qut"]
+[ext_resource type="PackedScene" uid="uid://cqkh5gk0b4f1e" path="res://Transitions - TC Title/fade_in.tscn" id="8_w2kmr"]
+
+[sub_resource type="GDScript" id="GDScript_tfrfi"]
+resource_name = "res://Mennu.gd"
+script/source = "extends Control
+
+func _on_play_button_pressed():
+	get_tree().change_scene_to_file(\"res://Game Scenes/game_scene.tscn\")
+
+
+func _on_options_button_pressed():
+	get_tree().change_scene_to_file(\"res://Game Scenes/options_scene.tscn\"
+
+
+func _on_credits_button_pressed():
+	get_tree().change_scene_to_file(\"res\")
+
+
+func _on_menu_button_pressed():
+	get_tree().quit()
+"
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_tfrfi")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1280.0
+offset_bottom = 717.0
+texture = ExtResource("1_hqly3")
+
+[node name="menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 1160.0
+offset_bottom = 640.0
+
+[node name="Logo" type="TextureRect" parent="menu"]
+layout_mode = 2
+texture = ExtResource("2_c11a5")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Center Row" type="HBoxContainer" parent="menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="menu/Center Row"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="PlayButton" parent="menu/Center Row/Buttons" instance=ExtResource("3_1xgqw")]
+custom_minimum_size = Vector2(360, 35)
+layout_mode = 2
+
+[node name="Options Button" parent="menu/Center Row/Buttons" instance=ExtResource("4_vpfxc")]
+custom_minimum_size = Vector2(360, 35)
+layout_mode = 2
+
+[node name="Credits Button" parent="menu/Center Row/Buttons" instance=ExtResource("5_465fn")]
+custom_minimum_size = Vector2(360, 35)
+layout_mode = 2
+
+[node name="MenuButton" parent="menu/Center Row/Buttons" instance=ExtResource("6_smh84")]
+custom_minimum_size = Vector2(360, 35)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="menu/Center Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Characters" type="TextureRect" parent="menu/Center Row/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("6_55lfu")
+expand_mode = 2
+
+[node name="Version Label" type="Label" parent="menu"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("6_x0qut")
+theme_override_font_sizes/font_size = 30
+text = "Version 1.0 Beta 
+TechKris Studios"
+
+[node name="Fade_In" parent="." instance=ExtResource("8_w2kmr")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_right = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="menu/Center Row/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="menu/Center Row/Buttons/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="menu/Center Row/Buttons/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="menu/Center Row/Buttons/MenuButton" to="." method="_on_menu_button_pressed"]
