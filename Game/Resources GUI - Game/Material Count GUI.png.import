@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://bcbgsjr5ppj36"
+=======
+uid="uid://dmmurvmhv6xcj"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Material Count GUI.png-8b7ac1d7a8256c6b3abfeddb4af636d6.ctex"
 metadata={
 "vram_texture": false

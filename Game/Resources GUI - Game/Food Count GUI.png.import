@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://dp487v8caw3cd"
+=======
+uid="uid://e7vdkj7v3t3j"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Food Count GUI.png-f2a9b0978ecf8e539e551bff6b3d15f0.ctex"
 metadata={
 "vram_texture": false

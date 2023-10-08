@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://bk58hlfuhnt87"
+=======
+uid="uid://duojelkx82srp"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Energy Count GUI.png-8cf016acc02ce4d6019fa5f525c0188f.ctex"
 metadata={
 "vram_texture": false

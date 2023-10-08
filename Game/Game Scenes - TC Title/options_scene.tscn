@@ -5,9 +5,12 @@
 [node name="Option Scene" instance=ExtResource("1_o70j6")]
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
 text = "Options Scene"
 =======
+=======
+>>>>>>> Stashed changes
 [node name="TextureRect" parent="." index="0"]
 layout_mode = 0
 anchors_preset = 0
@@ -20,4 +23,7 @@ grow_vertical = 1
 
 [node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
 text = "To be added in a future update!"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

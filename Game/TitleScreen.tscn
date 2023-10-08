@@ -1,7 +1,11 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=11 format=3 uid="uid://bryytvet0abxk"]
 =======
 [gd_scene load_steps=11 format=3 uid="uid://cacom6mgl2jmx"]
+>>>>>>> Stashed changes
+=======
+[gd_scene load_steps=11 format=3 uid="uid://dnibddhhrx2vg"]
 >>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://wr7xlsbbf16y" path="res://Assets - TC Title/pxArt.png" id="1_hqly3"]
@@ -20,7 +24,11 @@ script/source = "extends Control
 
 func _on_play_button_pressed():
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	get_tree().change_scene_to_file(\"res://Scenes/mainGame.tscn\")
+=======
+	get_tree().change_scene_to_file(\"res://Game Scenes - TC Title/Lore Scene 1.tscn\")
+>>>>>>> Stashed changes
 =======
 	get_tree().change_scene_to_file(\"res://Game Scenes - TC Title/Lore Scene 1.tscn\")
 >>>>>>> Stashed changes
@@ -32,7 +40,11 @@ func _on_options_button_pressed():
 
 func _on_credits_button_pressed():
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	get_tree().change_scene_to_file(\"res://Game Scenes - TC Title/credits_scene.tscn\")
+=======
+	get_tree().change_scene_to_file(\"res://Game Scenes - TC Title/Credits_page.tscn\")
+>>>>>>> Stashed changes
 =======
 	get_tree().change_scene_to_file(\"res://Game Scenes - TC Title/Credits_page.tscn\")
 >>>>>>> Stashed changes
@@ -53,17 +65,23 @@ script = SubResource("GDScript_tfrfi")
 
 [node name="Background" type="TextureRect" parent="."]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 layout_mode = 0
 offset_top = -1.0
 offset_right = 1280.0
 offset_bottom = 717.0
 =======
+=======
+>>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 texture = ExtResource("1_hqly3")
 
@@ -76,7 +94,10 @@ offset_right = 1160.0
 offset_bottom = 640.0
 grow_vertical = 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 pivot_offset = Vector2(189, -284)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -118,6 +139,10 @@ size_flags_horizontal = 3
 
 [node name="Characters" type="TextureRect" parent="menu/Center Row/CenterContainer"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+visible = false
+>>>>>>> Stashed changes
 =======
 visible = false
 >>>>>>> Stashed changes

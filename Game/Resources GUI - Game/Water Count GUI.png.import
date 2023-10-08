@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://cat3kgkm7xi2h"
+=======
+uid="uid://63ku2t503x36"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Water Count GUI.png-cba500cabcc4dd2c0e320bc89b76229b.ctex"
 metadata={
 "vram_texture": false

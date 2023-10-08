@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://cbh8ul7v1cxq0"
+=======
+uid="uid://dqjyfg4lqp8uc"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Population Count GUI.png-330ebdab5a13de1058702d062305486a.ctex"
 metadata={
 "vram_texture": false
