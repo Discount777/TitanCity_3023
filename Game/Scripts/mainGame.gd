@@ -62,17 +62,24 @@ func _input(_event):
 				match currentBuildingMode:
 					buildingModes.food:
 						tileMap.set_cell(buildingLayer, MapCoordinates, 1, Vector2i(0,0))
+						metalCount -=20
 					buildingModes.mats:
 						if (mousePositionTileType == "metal"):
 							tileMap.set_cell(buildingLayer, MapCoordinates, 1, Vector2i(1,0))
+							metalCount -=10
 						else:
 							tileMap.set_cell(buildingLayer, MapCoordinates, 1, Vector2i(2,0))
 					buildingModes.energy:
 						tileMap.set_cell(buildingLayer, MapCoordinates, 1, Vector2i(3,0))
+						metalCount -=15
 					buildingModes.water:
 						tileMap.set_cell(buildingLayer, MapCoordinates, 1, Vector2i(4,0))
+						metalCount -=15
+						
 					buildingModes.population:
 						tileMap.set_cell(buildingLayer, MapCoordinates, 1, Vector2i(5,0))
+						popCount += 5
+						metalCount-=25
 						
 						
 	
@@ -92,31 +99,60 @@ func _input(_event):
 
 func _on_ResourceTimer_timeout():
 	for cell in tileMap.get_used_cells(buildingLayer):
-		var tileData = tileMap.get_cell_tile_data(buildingLayer, cell)
+		var buildData = tileMap.get_cell_tile_data(buildingLayer, cell)
+		var tileData = tileMap.get_cell_tile_data(tileLayer, cell)
+		var matProd = 16
+		var waterProd = 10
+		var energyProd = 10
+		var foodProd = 10
+		var popProd = 2
+
 		if tileData:
-			var buildingType = tileData.get_custom_data("buildingType")
+			var buildingType = buildData.get_custom_data("buildingType")
 			var tileType = tileData.get_custom_data('tileType')
+			print(buildingType)
+			print(tileType)
 			if buildingType == 'matsMetal' and tileType == 'metal':
-				metalCount += 150
-			if buildingType == 'food' and tileType == 'x':
-				foodCount += 150
-			if buildingType == 'energy' and tileType == 'oil':
-				energyCount += 150
+				metalCount += matProd*1.5
+			if buildingType == 'matsOil' and tileType == 'oil':
+				metalCount += matProd*1.5
 			if buildingType == 'water' and tileType == 'ice':
-				waterCount += 150
-				
-			elif buildingType == 'water' and tileType != 'ice':
-				waterCount +=100
-			elif buildingType == 'matsMetal' and tileType != 'metal':
-				metalCount +=100
+				waterCount += waterProd*1.5
+			for i in [Vector2i(-1,0), Vector2i(1,0), Vector2i(0,1), Vector2i(0,-1)]:
+				if (tileMap.get_cell_tile_data(tileLayer, cell +i).get_custom_data('tileType')) == 'river':
+					foodCount += foodProd*1.5
+			if buildingType == 'water' and tileType != 'ice':
+				waterCount +=10
+				energyCount -=15
+			if buildingType == 'matsOil' and tileType != 'metal':
+				metalCount +=16
+				energyCount -=3
+				waterCount -=3
+			if buildingType == 'energy' and tileType != 'oil':
+				energyCount += 10
+				waterCount -=10
+			if buildingType == 'food':
+				foodCount += 10
+				energyCount-=5
+				waterCount -=5
+			if buildingType == 'population':
+				popCount += 2
+				foodCount -=10
+				energyCount -= 10
+				waterCount -=10
+
+
 	$Control/HBoxWater/Water/WaterVal.text = str(waterCount)
 	$Control/HBoxEnergy/Energy/EnergyVal.text = str(energyCount)
 	$Control/HBoxFood/Food/FoodVal.text = str(foodCount)
 	$Control/HBoxMat/Mat/MatVal.text = str(metalCount)
 	$Control/HBoxPop/Pop/PopVal.text = str(popCount)
-	
+
 	print(popCount, metalCount, energyCount, waterCount, foodCount)
 			
+
+
+
 
 
 

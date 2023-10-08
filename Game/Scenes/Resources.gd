@@ -3,11 +3,11 @@ extends Control
 
 
 
-var Water := 100
-var Energy :=100
-var Food :=100
-var Mat :=100
-var Pop :=50
+var Water := 20
+var Energy :=20
+var Food :=20
+var Mat :=20
+var Pop :=10
 
 
 # Called when the node enters the scene tree for the first time.
