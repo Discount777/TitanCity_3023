@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=11 format=3 uid="uid://bryytvet0abxk"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://cacom6mgl2jmx"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://wr7xlsbbf16y" path="res://Assets - TC Title/pxArt.png" id="1_hqly3"]
 [ext_resource type="Texture2D" uid="uid://rn75eg56sp7t" path="res://Assets - TC Title/logo 2.png" id="2_c11a5"]
@@ -15,7 +19,11 @@ resource_name = "res://Mennu.gd"
 script/source = "extends Control
 
 func _on_play_button_pressed():
+<<<<<<< Updated upstream
 	get_tree().change_scene_to_file(\"res://Scenes/mainGame.tscn\")
+=======
+	get_tree().change_scene_to_file(\"res://Game Scenes - TC Title/Lore Scene 1.tscn\")
+>>>>>>> Stashed changes
 
 
 func _on_options_button_pressed():
@@ -23,7 +31,11 @@ func _on_options_button_pressed():
 
 
 func _on_credits_button_pressed():
+<<<<<<< Updated upstream
 	get_tree().change_scene_to_file(\"res://Game Scenes - TC Title/credits_scene.tscn\")
+=======
+	get_tree().change_scene_to_file(\"res://Game Scenes - TC Title/Credits_page.tscn\")
+>>>>>>> Stashed changes
 
 
 func _on_menu_button_pressed():
@@ -40,10 +52,19 @@ grow_vertical = 2
 script = SubResource("GDScript_tfrfi")
 
 [node name="Background" type="TextureRect" parent="."]
+<<<<<<< Updated upstream
 layout_mode = 0
 offset_top = -1.0
 offset_right = 1280.0
 offset_bottom = 717.0
+=======
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+>>>>>>> Stashed changes
 texture = ExtResource("1_hqly3")
 
 [node name="menu" type="VBoxContainer" parent="."]
@@ -54,7 +75,10 @@ offset_top = 80.0
 offset_right = 1160.0
 offset_bottom = 640.0
 grow_vertical = 2
+<<<<<<< Updated upstream
 pivot_offset = Vector2(189, -284)
+=======
+>>>>>>> Stashed changes
 
 [node name="Logo" type="TextureRect" parent="menu"]
 layout_mode = 2
@@ -93,6 +117,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Characters" type="TextureRect" parent="menu/Center Row/CenterContainer"]
+<<<<<<< Updated upstream
+=======
+visible = false
+>>>>>>> Stashed changes
 layout_mode = 2
 texture = ExtResource("7_40gyp")
 

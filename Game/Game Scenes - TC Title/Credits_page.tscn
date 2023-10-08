@@ -1,0 +1,136 @@
+[gd_scene load_steps=4 format=3 uid="uid://686jn42wjsr7"]
+
+[ext_resource type="Texture2D" uid="uid://wr7xlsbbf16y" path="res://Assets - TC Title/pxArt.png" id="1_m6pa5"]
+[ext_resource type="FontFile" uid="uid://dx4m0i5o64ex7" path="res://Text Files - TC Title/Pixels.ttf" id="2_bt0v5"]
+
+[sub_resource type="GDScript" id="GDScript_xrihc"]
+resource_name = "res://Game Scenes/game_scene.gd"
+script/source = "extends Control
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file(\"res://TitleScreen.tscn\")
+"
+
+[node name="Game Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_xrihc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m6pa5")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 94.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 50
+text = "Members"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Maxmilian Halim - Main Programmer"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Varun Surya Saptarshi Bhowmik - Main UI/UX Designer"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Alden Lekenila - Main Asset Designer, Auxiliary Programmer"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Mikha Bernhard Silitonga - Main Backend Programmer "
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -100.5
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 50
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Maxmilian Halim - Main Programmer"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Varun Surya Saptarshi Bhowmik - Main UI Designer"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Alden Lekenila - Main Asset Designer"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bt0v5")
+theme_override_font_sizes/font_size = 32
+text = "Mikha Bernhard Silitonga - Main Backend Programmer "
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
