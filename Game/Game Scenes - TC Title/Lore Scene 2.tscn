@@ -8,12 +8,19 @@
 [node name="Label" parent="VBoxContainer" index="0"]
 text = "Earth Command has entrusted us with a formidable arsenal of tools: a Polymerization Plant, a cutting-edge Mining Facility, "
 
-[node name="Label2" parent="VBoxContainer" index="1"]
-text = "an advanced Water Purification system, a powerful Fusion Reactor, a state-of-the-art Hydroponics facility, and comfortable Population Quarters. "
-
-[node name="Label3" type="Label" parent="VBoxContainer" index="2"]
+[node name="Label4" type="Label" parent="VBoxContainer" index="2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_rd231")
 theme_override_font_sizes/font_size = 32
 text = "These technological marvels shall serve as our foundation as we embark on the cosmic endeavor of colonizing Titan."
+horizontal_alignment = 1
+
+[node name="Label2" parent="VBoxContainer" index="3"]
+text = "an advanced Water Purification system, a powerful Fusion Reactor, "
+
+[node name="Label5" type="Label" parent="VBoxContainer" index="4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rd231")
+theme_override_font_sizes/font_size = 32
+text = "a state-of-the-art Hydroponics facility, and comfortable Population Quarters. "
 horizontal_alignment = 1

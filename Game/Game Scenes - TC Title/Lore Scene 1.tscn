@@ -45,7 +45,14 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vpoqx")
 theme_override_font_sizes/font_size = 32
-text = "In the year 3023, Earth's dwindling resources propel us toward the cosmos. Earth Command's decree: colonization of Saturn's moon, Titan, begins. "
+text = "In the year 3023, Earth's dwindling resources propel us toward the cosmos. "
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vpoqx")
+theme_override_font_sizes/font_size = 32
+text = "Earth Command's decree: colonization of Saturn's moon, Titan, begins. "
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
